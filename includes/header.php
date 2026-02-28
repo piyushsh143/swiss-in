@@ -107,13 +107,13 @@ $nav_active = $nav_active ?? '';
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link <?= $nav_active === 'home' ? 'active' : '' ?>">Home</a>
-                    <a href="about.php"
+                    <a href="index" class="nav-item nav-link <?= $nav_active === 'home' ? 'active' : '' ?>">Home</a>
+                    <a href="about"
                         class="nav-item nav-link <?= $nav_active === 'about' ? 'active' : '' ?>">About</a>
-                    <a href="service.php"
+                    <a href="service"
                         class="nav-item nav-link <?= $nav_active === 'service' ? 'active' : '' ?>">Service</a>
-                    <a href="blog.php" class="nav-item nav-link <?= $nav_active === 'blog' ? 'active' : '' ?>">Blog</a>
-                    <a href="contact.php"
+                    <a href="blog" class="nav-item nav-link <?= $nav_active === 'blog' ? 'active' : '' ?>">Blog</a>
+                    <a href="contact"
                         class="nav-item nav-link <?= $nav_active === 'contact' ? 'active' : '' ?>">Contact</a>
                 </div>
             </div>

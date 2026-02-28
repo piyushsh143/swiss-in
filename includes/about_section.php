@@ -26,7 +26,7 @@
                                 <i class="fas fa-ticket-alt fa-4x text-primary"></i>
                             </div>
                             <h1 class="display-5 fw-bold mb-2">34</h1>
-                            <p class="text-muted mb-0">Years of Experience</p>
+                            <p class="mb-0">Years of Experience</p>
                         </div>
                     </div>
                     <div class="col-8 col-md-9">

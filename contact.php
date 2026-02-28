@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $form_data['subject'] ?: null,
                 $form_data['message'],
             ]);
-            header('Location: contact.php?sent=1');
+            header('Location: contact?sent=1');
             exit;
         } catch (Exception $e) {
             $error = 'Unable to send your message. Please try again later.';
@@ -56,7 +56,7 @@ include __DIR__ . '/includes/header.php';
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h3>
         <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
+            <li class="breadcrumb-item"><a href="index" class="text-white">Home</a></li>
             <li class="breadcrumb-item"><a href="#" class="text-white">Pages</a></li>
             <li class="breadcrumb-item active text-secondary">Contact</li>
         </ol>
@@ -138,7 +138,7 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 <h1 class="display-5 mb-4">Send Your Message</h1>
                 <p class="lh-base mb-4">Fill in the form below and we'll get back to you as soon as possible.</p>
-                <form method="post" action="contact.php">
+                <form method="post" action="contact">
                     <div class="row g-4">
                         <div class="col-lg-12 col-xl-6">
                             <div class="form-floating">

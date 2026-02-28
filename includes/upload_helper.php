@@ -75,7 +75,7 @@ function upload_delete_image(?string $relativePath): void {
     if (strpos($relativePath, '..') !== false) {
         return;
     }
-    $allowedPrefixes = ['uploads/testimonials/', 'uploads/blogs/'];
+    $allowedPrefixes = ['uploads/testimonials/', 'uploads/blogs/', 'uploads/partners/'];
     $ok = false;
     foreach ($allowedPrefixes as $prefix) {
         if (strpos($relativePath, $prefix) === 0) {

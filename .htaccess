@@ -1,0 +1,31 @@
+# Travisa - PHP project
+# Clean URLs: /about, /contact, /service, /blog, /testimonial (no .php)
+# If site is at document root, change RewriteBase to /
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /travisa/
+    # Redirect .php URLs to clean URLs (301)
+    RewriteCond %{THE_REQUEST} \s/travisa/(about|contact|service|blog|testimonial|index)\.php [NC]
+    RewriteRule ^ /travisa/%1 [R=301,L]
+    RewriteCond %{THE_REQUEST} \s/travisa/blog-single\.php\?slug=([^\s&]+) [NC]
+    RewriteRule ^ /travisa/blog/%1 [R=301,L]
+    # Don't rewrite real files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Public pages
+    RewriteRule ^about$ about.php [L]
+    RewriteRule ^contact$ contact.php [L]
+    RewriteRule ^service$ service.php [L]
+    RewriteRule ^blog$ blog.php [L]
+    RewriteRule ^testimonial$ testimonial.php [L]
+    RewriteRule ^index$ index.php [L]
+    # Blog post: /blog/slug
+    RewriteRule ^blog/([^/]+)$ blog-single.php?slug=$1 [L,QSA]
+    # Redirect /admin (no trailing slash) to /admin/
+    RewriteRule ^admin$ admin/ [L,R=301]
+</IfModule>
+
+# Default document for /admin/
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+</IfModule>

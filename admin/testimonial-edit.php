@@ -92,6 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="dashboard.php"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
                 <a href="testimonials.php" class="active"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
                 <a href="blogs.php"><i class="bi bi-journal-text me-2"></i>Blogs</a>
+                <a href="partners.php"><i class="bi bi-people me-2"></i>Partners</a>
+                <a href="geographies.php"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
                 <a href="contacts.php"><i class="bi bi-envelope me-2"></i>Contact Us</a>
                 <hr class="border-secondary">
                 <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>

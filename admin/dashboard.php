@@ -10,6 +10,9 @@ $contactCount = $pdo->query('SELECT COUNT(*) FROM contactUs')->fetchColumn();
 $contactUnread = $pdo->query('SELECT COUNT(*) FROM contactUs WHERE is_read = 0')->fetchColumn();
 $publishedTestimonials = $pdo->query('SELECT COUNT(*) FROM testimonials WHERE is_published = 1')->fetchColumn();
 $publishedBlogs = $pdo->query('SELECT COUNT(*) FROM blogs WHERE is_published = 1')->fetchColumn();
+$partnerCount = $pdo->query('SELECT COUNT(*) FROM partners')->fetchColumn();
+$publishedPartners = $pdo->query('SELECT COUNT(*) FROM partners WHERE is_published = 1')->fetchColumn();
+$geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active = 1')->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +39,8 @@ $publishedBlogs = $pdo->query('SELECT COUNT(*) FROM blogs WHERE is_published = 1
                 <a href="dashboard.php" class="active"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
                 <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
                 <a href="blogs.php"><i class="bi bi-journal-text me-2"></i>Blogs</a>
+                <a href="partners.php"><i class="bi bi-people me-2"></i>Partners</a>
+                <a href="geographies.php"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
                 <a href="contacts.php"><i class="bi bi-envelope me-2"></i>Contact Us</a>
                 <hr class="border-secondary">
                 <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
@@ -68,6 +73,34 @@ $publishedBlogs = $pdo->query('SELECT COUNT(*) FROM blogs WHERE is_published = 1
                                         <small class="text-success"><?= (int) $publishedBlogs ?> published</small>
                                     </div>
                                     <a href="blogs.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Manage</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-dash shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="card-title text-muted">Partners</h5>
+                                        <h2 class="mb-0"><?= (int) $partnerCount ?></h2>
+                                        <small class="text-success"><?= (int) $publishedPartners ?> published</small>
+                                    </div>
+                                    <a href="partners.php" class="btn btn-primary"><i class="bi bi-people"></i> Manage</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-dash shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="card-title text-muted">Geographies</h5>
+                                        <h2 class="mb-0"><?= (int) $geographyCount ?></h2>
+                                        <small class="text-success">Active regions</small>
+                                    </div>
+                                    <a href="geographies.php" class="btn btn-primary"><i class="bi bi-geo-alt"></i> Manage</a>
                                 </div>
                             </div>
                         </div>

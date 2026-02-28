@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" aria-label="India map">
+  <defs>
+    <linearGradient id="indiaFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1f3f5"/>
+      <stop offset="100%" style="stop-color:#dee2e6"/>
+    </linearGradient>
+  </defs>
+  <!-- Simplified India outline -->
+  <path fill="url(#indiaFill)" stroke="#6c757d" stroke-width="1.2" stroke-linejoin="round" d="M140 8 L165 15 L185 28 L200 48 L212 75 L220 105 L225 140 L226 175 L224 210 L218 245 L208 278 L195 305 L178 315 L158 318 L138 312 L120 298 L105 278 L95 252 L88 222 L82 188 L78 152 L76 115 L78 78 L84 45 L95 22 L112 10 Z"/>
+  <text x="140" y="165" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#495057" font-weight="500">India</text>
+</svg>

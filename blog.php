@@ -11,7 +11,7 @@ include __DIR__ . '/includes/header.php';
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Blog</h3>
                 <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index" class="text-white">Home</a></li>
                     <li class="breadcrumb-item active text-secondary">Blog</li>
                 </ol>
             </div>
@@ -31,16 +31,16 @@ include __DIR__ . '/includes/header.php';
                     ?>
                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="card h-100 shadow-sm border-0 rounded overflow-hidden">
-                            <a href="blog-single.php?slug=<?= urlencode($b['slug']) ?>">
+                            <a href="blog/<?= urlencode($b['slug']) ?>">
                                 <img src="<?= htmlspecialchars($img) ?>" class="card-img-top" alt="<?= htmlspecialchars($b['title']) ?>" style="height: 220px; object-fit: cover;">
                             </a>
                             <div class="card-body">
                                 <small class="text-muted"><?= date('F j, Y', strtotime($b['created_at'])) ?></small>
                                 <h5 class="card-title mt-2">
-                                    <a href="blog-single.php?slug=<?= urlencode($b['slug']) ?>" class="text-secondary text-decoration-none"><?= htmlspecialchars($b['title']) ?></a>
+                                    <a href="blog/<?= urlencode($b['slug']) ?>" class="text-secondary text-decoration-none"><?= htmlspecialchars($b['title']) ?></a>
                                 </h5>
                                 <p class="card-text text-muted"><?= htmlspecialchars(mb_substr($summary, 0, 120)) ?><?= mb_strlen($summary) > 120 ? '...' : '' ?></p>
-                                <a href="blog-single.php?slug=<?= urlencode($b['slug']) ?>" class="btn btn-primary btn-sm rounded-pill">Read more</a>
+                                <a href="blog/<?= urlencode($b['slug']) ?>" class="btn btn-primary btn-sm rounded-pill">Read more</a>
                             </div>
                         </div>
                     </div>

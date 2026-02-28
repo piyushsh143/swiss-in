@@ -2,7 +2,7 @@
 require_once __DIR__ . '/config/database.php';
 $slug = trim($_GET['slug'] ?? '');
 if ($slug === '') {
-    header('Location: blog.php');
+    header('Location: blog');
     exit;
 }
 $pdo = getDb();
@@ -10,7 +10,7 @@ $stmt = $pdo->prepare('SELECT * FROM blogs WHERE slug = ? AND is_published = 1')
 $stmt->execute([$slug]);
 $post = $stmt->fetch();
 if (!$post) {
-    header('Location: blog.php');
+    header('Location: blog');
     exit;
 }
 $page_title = $post['title'];
@@ -22,8 +22,8 @@ include __DIR__ . '/includes/header.php';
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h3 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s"><?= htmlspecialchars($post['title']) ?></h3>
                 <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
-                    <li class="breadcrumb-item"><a href="blog.php" class="text-white">Blog</a></li>
+                    <li class="breadcrumb-item"><a href="index" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item"><a href="blog" class="text-white">Blog</a></li>
                     <li class="breadcrumb-item active text-secondary"><?= htmlspecialchars(mb_substr($post['title'], 0, 30)) ?><?= mb_strlen($post['title']) > 30 ? '...' : '' ?></li>
                 </ol>
             </div>
@@ -41,7 +41,7 @@ include __DIR__ . '/includes/header.php';
                         <?= nl2br(htmlspecialchars($post['content'])) ?>
                     </div>
                     <hr class="my-5">
-                    <a href="blog.php" class="btn btn-primary rounded-pill">&larr; Back to Blog</a>
+                    <a href="blog" class="btn btn-primary rounded-pill">&larr; Back to Blog</a>
                 </article>
             </div>
         </div>

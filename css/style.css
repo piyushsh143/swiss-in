@@ -349,7 +349,7 @@
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-    background: linear-gradient(rgb(213 198 193 / 90%), rgb(217 204 199 / 80%)), url(../img/breadcrumb.png);
+    background: linear-gradient(135deg, rgba(0, 58, 102, 0.92) 0%, rgba(0, 82, 147, 0.88) 50%, rgba(22, 119, 179, 0.86) 100%), url(../img/breadcrumb.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: initial;
@@ -639,6 +639,135 @@
 .contact .office .office-item .office-content a.text-secondary:hover {
     color: var(--bs-primary) !important;
 }
+
+/* Dynamic Our Partners cards (blue top bar, orange heading, grey text) */
+.partners-cards .partner-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.partners-cards .partner-card:hover {
+    box-shadow: 0 10px 30px rgba(224, 82, 24, 0.2);
+}
+
+.partner-card__top {
+    background: #1a365d;
+    color: #fff;
+    padding: 1.25rem 1rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.partner-card__top img.partner-card__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+}
+
+.partner-card__top-watermark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: clamp(0.75rem, 2.2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.18);
+    padding: 0 1rem;
+    line-height: 1.2;
+    text-align: center;
+    pointer-events: none;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.partner-card__top-icon {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 991px) {
+    .partner-card__top-watermark {
+        font-size: clamp(0.65rem, 3.5vw, 0.9rem);
+        padding: 0 1.25rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .partner-card__top-watermark {
+        font-size: 0.7rem;
+        padding: 0 1.5rem;
+    }
+}
+
+.partner-card__heading {
+    color: var(--bs-primary);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1rem 1rem 0.5rem;
+}
+
+.partner-card__desc {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0 1rem 1.25rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Our Presence 3rd card (legend) – readable contrast */
+.presence-legend-card {
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0.375rem;
+}
+
+.presence-legend-card__text {
+    color: #495057 !important;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Leaflet India states map – container, responsive, 500px height */
+.india-map-wrap { min-height: 500px; }
+.india-map-wrap .india-map-leaflet-states {
+    width: 100%;
+    height: 500px;
+    min-height: 300px;
+    background: #e9ecef;
+}
+@media (max-width: 768px) {
+    .india-map-wrap .india-map-leaflet-states { height: 400px; min-height: 280px; }
+}
+.india-map-wrap .leaflet-container { font-family: inherit; }
+.india-map-tooltip {
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-weight: 500;
+}
+.india-map-presence-marker { border: none !important; background: transparent !important; }
+.india-map-error { min-height: 200px; }
 
 /*** Contact End ***/
 

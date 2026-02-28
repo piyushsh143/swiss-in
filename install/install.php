@@ -61,10 +61,47 @@ try {
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         ) ENGINE=InnoDB
     ");
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS partners (
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255) NOT NULL,
+            description TEXT DEFAULT NULL,
+            image_path VARCHAR(255) DEFAULT NULL,
+            sort_order INT NOT NULL DEFAULT 0,
+            is_published TINYINT(1) NOT NULL DEFAULT 1,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB
+    ");
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS geographies (
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(128) NOT NULL,
+            state_code VARCHAR(20) DEFAULT NULL,
+            coverage_type ENUM('telecalling','field','both') NOT NULL DEFAULT 'both',
+            sort_order INT NOT NULL DEFAULT 0,
+            is_active TINYINT(1) NOT NULL DEFAULT 1,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB
+    ");
 
     $hash = password_hash('admin123', PASSWORD_DEFAULT);
     $stmt = $pdo->prepare('INSERT IGNORE INTO admins (username, password_hash) VALUES (?, ?)');
     $stmt->execute(['admin', $hash]);
+
+    if ($pdo->query('SELECT COUNT(*) FROM geographies')->fetchColumn() == 0) {
+        $defaultGeographies = [
+            ['Punjab', 'IN-PB', 'both', 1],
+            ['Himachal Pradesh', 'IN-HP', 'both', 2],
+            ['Rajasthan', 'IN-RJ', 'both', 3],
+            ['Haryana', 'IN-HR', 'both', 4],
+        ];
+        $stmtGeo = $pdo->prepare('INSERT INTO geographies (name, state_code, coverage_type, sort_order) VALUES (?, ?, ?, ?)');
+        foreach ($defaultGeographies as $g) {
+            $stmtGeo->execute($g);
+        }
+    }
 
     echo '<h1>Setup complete</h1><p>Database <strong>swiis_db</strong> and tables created. Default admin: <strong>admin</strong> / <strong>admin123</strong>. <a href="../admin/">Go to admin login</a>. Delete or protect the <code>install/</code> folder.</p>';
 } catch (Exception $e) {
