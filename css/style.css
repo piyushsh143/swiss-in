@@ -640,41 +640,220 @@
     color: var(--bs-primary) !important;
 }
 
-/* Dynamic Our Partners cards (blue top bar, orange heading, grey text) */
-.partners-cards .partner-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+/* Our Clients section – gradient bg, single white rounded card, left text + right logo grid (3 cols) */
+.our-clients-section {
+    position: relative;
+    padding: 80px 0;
     overflow: hidden;
-    text-align: center;
-    transition: 0.3s;
-    height: 100%;
+}
+
+.our-clients-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 40%, #5c4a3d 70%, #8b6914 100%);
+    z-index: 0;
+}
+
+.our-clients-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.our-clients-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem 2rem;
+}
+
+.our-clients-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.35rem 0;
+    line-height: 1.2;
+}
+
+.our-clients-title-line {
+    width: 48px;
+    height: 3px;
+    background: #e07b39;
+    margin-bottom: 1.25rem;
+    border-radius: 2px;
+}
+
+.our-clients-desc {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.our-clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 1.25rem;
+}
+
+.our-clients-item {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
 }
 
-.partners-cards .partner-card:hover {
-    box-shadow: 0 10px 30px rgba(224, 82, 24, 0.2);
-}
-
-.partner-card__top {
-    background: #1a365d;
-    color: #fff;
-    padding: 1.25rem 1rem;
-    min-height: 100px;
+.our-clients-logo {
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
-.partner-card__top img.partner-card__img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
+.our-clients-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.4);
+    opacity: 0.95;
+}
+
+.our-clients-item:hover .our-clients-logo img {
+    filter: grayscale(0.6) brightness(0.5);
+    opacity: 1;
+}
+
+.our-clients-logo--placeholder {
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+.our-clients-logo-icon {
+    font-size: 1.5rem;
+    color: #495057;
+}
+
+.our-clients-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #495057;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 991px) {
+    .our-clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .our-clients-section {
+        padding: 60px 0;
+    }
+
+    .our-clients-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .our-clients-title {
+        font-size: 1.6rem;
+    }
+
+    .our-clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem 0.75rem;
+    }
+
+    .our-clients-logo {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* Trusted Partners – full-width continuous carousel */
+.partners-carousel-wrap {
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 0.75rem 0 1.5rem;
+}
+
+.partners-carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    padding: 0 1rem;
+    animation: partners-carousel-scroll 14s linear infinite;
+}
+
+.partners-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes partners-carousel-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.partner-card--carousel {
+    flex: 0 0 280px;
+    width: 280px;
+}
+
+/* Trusted Partners / partner cards (client section) */
+.partners-cards .partner-card,
+.partner-card--carousel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.partners-cards .partner-card:hover,
+.partner-card--carousel:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.partner-card__top {
+    position: relative;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #f0f4f8 0%, #e2e8f0 100%);
+    padding: 1.25rem;
+}
+
+.partner-card__top .partner-card__img {
+    max-width: 100%;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.partner-card__top-icon {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .partner-card__top-watermark {
@@ -683,54 +862,62 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: clamp(0.75rem, 2.2vw, 1.1rem);
-    color: rgba(255, 255, 255, 0.18);
-    padding: 0 1rem;
-    line-height: 1.2;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.06);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     text-align: center;
-    pointer-events: none;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
-
-.partner-card__top-icon {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    font-size: 0.65rem;
-    opacity: 0.8;
-}
-
-@media (max-width: 991px) {
-    .partner-card__top-watermark {
-        font-size: clamp(0.65rem, 3.5vw, 0.9rem);
-        padding: 0 1.25rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .partner-card__top-watermark {
-        font-size: 0.7rem;
-        padding: 0 1.5rem;
-    }
+    padding: 1rem;
+    line-height: 1.3;
 }
 
 .partner-card__heading {
-    color: var(--bs-primary);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 1rem 1rem 0.5rem;
+    color: #1e293b;
+    margin: 1rem 1.25rem 0.5rem;
+    line-height: 1.3;
 }
 
 .partner-card__desc {
-    color: #6c757d;
     font-size: 0.9rem;
-    margin: 0 1rem 1.25rem;
-    line-height: 1.5;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0 1.25rem 1.25rem;
     flex: 1;
+}
+
+@media (max-width: 991px) {
+    .partner-card--carousel {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+}
+
+@media (max-width: 576px) {
+    .partner-card__top {
+        min-height: 120px;
+    }
+
+    .partner-card__heading {
+        font-size: 1rem;
+        margin: 0.85rem 1rem 0.4rem;
+    }
+
+    .partner-card__desc {
+        font-size: 0.85rem;
+        margin: 0 1rem 1rem;
+    }
+
+    .partner-card--carousel {
+        flex: 0 0 240px;
+        width: 240px;
+    }
+
+    .partners-carousel-track {
+        gap: 1rem;
+    }
 }
 
 /* Our Presence 3rd card (legend) – readable contrast */
@@ -747,27 +934,45 @@
 }
 
 /* Leaflet India states map – container, responsive, 500px height */
-.india-map-wrap { min-height: 500px; }
+.india-map-wrap {
+    min-height: 500px;
+}
+
 .india-map-wrap .india-map-leaflet-states {
     width: 100%;
     height: 500px;
     min-height: 300px;
     background: #e9ecef;
 }
+
 @media (max-width: 768px) {
-    .india-map-wrap .india-map-leaflet-states { height: 400px; min-height: 280px; }
+    .india-map-wrap .india-map-leaflet-states {
+        height: 400px;
+        min-height: 280px;
+    }
 }
-.india-map-wrap .leaflet-container { font-family: inherit; }
+
+.india-map-wrap .leaflet-container {
+    font-family: inherit;
+}
+
 .india-map-tooltip {
-    background: rgba(0,0,0,0.75);
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
     border: none;
     border-radius: 4px;
     padding: 6px 10px;
     font-weight: 500;
 }
-.india-map-presence-marker { border: none !important; background: transparent !important; }
-.india-map-error { min-height: 200px; }
+
+.india-map-presence-marker {
+    border: none !important;
+    background: transparent !important;
+}
+
+.india-map-error {
+    min-height: 200px;
+}
 
 /*** Contact End ***/
 

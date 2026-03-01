@@ -18,7 +18,7 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Dashboard - Travisa Admin</title>
+    <title>Dashboard - Swiis Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -35,15 +35,16 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 sidebar">
-                <div class="py-3 px-3 text-white fw-bold">Travisa Admin</div>
-                <a href="dashboard.php" class="active"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-                <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
-                <a href="blogs.php"><i class="bi bi-journal-text me-2"></i>Blogs</a>
-                <a href="partners.php"><i class="bi bi-people me-2"></i>Partners</a>
-                <a href="geographies.php"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
-                <a href="contacts.php"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                <div class="py-3 px-3 text-white fw-bold">Swiis Admin</div>
+                <a href="dashboard" class="active"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                <a href="testimonials"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
+                <a href="blogs"><i class="bi bi-journal-text me-2"></i>Blogs</a>
+                <a href="partners"><i class="bi bi-people me-2"></i>Clients</a>
+                <a href="geographies"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
+                <a href="contacts"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                <a href="site_settings"><i class="bi bi-gear me-2"></i>Site Settings</a>
                 <hr class="border-secondary">
-                <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                <a href="logout"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
             </nav>
             <main class="col-md-10 py-4">
                 <h1 class="mb-4">Dashboard</h1>
@@ -58,7 +59,7 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
                                         <h2 class="mb-0"><?= (int) $testimonialCount ?></h2>
                                         <small class="text-success"><?= (int) $publishedTestimonials ?> published</small>
                                     </div>
-                                    <a href="testimonials.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Manage</a>
+                                    <a href="testimonials" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Manage</a>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +73,7 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
                                         <h2 class="mb-0"><?= (int) $blogCount ?></h2>
                                         <small class="text-success"><?= (int) $publishedBlogs ?> published</small>
                                     </div>
-                                    <a href="blogs.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Manage</a>
+                                    <a href="blogs" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Manage</a>
                                 </div>
                             </div>
                         </div>
@@ -82,11 +83,11 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h5 class="card-title text-muted">Partners</h5>
+                                        <h5 class="card-title text-muted">Clients</h5>
                                         <h2 class="mb-0"><?= (int) $partnerCount ?></h2>
                                         <small class="text-success"><?= (int) $publishedPartners ?> published</small>
                                     </div>
-                                    <a href="partners.php" class="btn btn-primary"><i class="bi bi-people"></i> Manage</a>
+                                    <a href="partners" class="btn btn-primary"><i class="bi bi-people"></i> Manage</a>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +101,7 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
                                         <h2 class="mb-0"><?= (int) $geographyCount ?></h2>
                                         <small class="text-success">Active regions</small>
                                     </div>
-                                    <a href="geographies.php" class="btn btn-primary"><i class="bi bi-geo-alt"></i> Manage</a>
+                                    <a href="geographies" class="btn btn-primary"><i class="bi bi-geo-alt"></i> Manage</a>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +115,7 @@ $geographyCount = $pdo->query('SELECT COUNT(*) FROM geographies WHERE is_active 
                                         <h2 class="mb-0"><?= (int) $contactCount ?></h2>
                                         <small class="<?= $contactUnread ? 'text-warning' : 'text-success' ?>"><?= (int) $contactUnread ?> unread</small>
                                     </div>
-                                    <a href="contacts.php" class="btn btn-primary"><i class="bi bi-envelope"></i> View</a>
+                                    <a href="contacts" class="btn btn-primary"><i class="bi bi-envelope"></i> View</a>
                                 </div>
                             </div>
                         </div>

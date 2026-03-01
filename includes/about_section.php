@@ -1,3 +1,4 @@
+<?php if (!isset($site_phone)) { require_once __DIR__ . '/site_settings.php'; } ?>
 <!-- About Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5">
@@ -44,7 +45,7 @@
                         </div>
                         <div class="d-flex flex-wrap">
                             <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                                <a href="" class="position-relative wow tada" data-wow-delay=".9s">
+                                <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $site_phone)) ?>" class="position-relative wow tada" data-wow-delay=".9s">
                                     <i class="fa fa-phone-alt text-primary fa-3x"></i>
                                     <div class="position-absolute" style="top: 0; left: 25px;">
                                         <span><i class="fa fa-comment-dots text-secondary"></i></span>
@@ -53,8 +54,7 @@
                             </div>
                             <div class="d-flex flex-column justify-content-center">
                                 <span class="text-primary">Have any questions?</span>
-                                <span class="text-secondary fw-bold fs-5" style="letter-spacing: 2px;">Free:
-                                    +91-7527008800</span>
+                                <span class="text-secondary fw-bold fs-5" style="letter-spacing: 2px;">Free: <?= htmlspecialchars($site_phone) ?></span>
                             </div>
                         </div>
                     </div>

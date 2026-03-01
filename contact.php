@@ -80,13 +80,17 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 <h1 class="display-5 mb-4">Have Questions? Don't Hesitate to Contact Us</h1>
                 <p class="mb-5">Get in touch for debt recovery services, partnerships, or general enquiries. We're here to help.</p>
+                <?php if (!empty($office_addresses)): ?>
+                <?php foreach ($office_addresses as $addr): ?>
                 <div class="d-flex border-bottom mb-4 pb-4">
                     <i class="fas fa-map-marked-alt fa-4x text-primary bg-light p-3 rounded"></i>
                     <div class="ps-3">
-                        <h5>Location</h5>
-                        <p>Swiis Debt Management Pvt. Ltd., Bahowal, C/o Gurdev Singh, Village Mahilpur, Hoshiarpur, Punjab, India - 146105.</p>
+                        <h5><?= htmlspecialchars($addr['title']) ?></h5>
+                        <p class="mb-0"><?= nl2br(htmlspecialchars($addr['address'])) ?></p>
                     </div>
                 </div>
+                <?php endforeach; ?>
+                <?php endif; ?>
                 <div class="row g-3">
                     <div class="col-xl-6">
                         <div class="d-flex">
@@ -95,11 +99,11 @@ include __DIR__ . '/includes/header.php';
                                 <h5 class="mb-3">Quick Contact</h5>
                                 <div class="mb-3">
                                     <h6 class="mb-0">Phone:</h6>
-                                    <a href="tel:+917527008800" class="fs-5 text-primary">+91-7527008800</a>
+                                    <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $site_phone)) ?>" class="fs-5 text-primary"><?= htmlspecialchars($site_phone) ?></a>
                                 </div>
                                 <div class="mb-3">
                                     <h6 class="mb-0">Email:</h6>
-                                    <a href="mailto:info@swiis.in" class="fs-5 text-primary">info@swiis.in</a>
+                                    <a href="mailto:<?= htmlspecialchars($site_email) ?>" class="fs-5 text-primary"><?= htmlspecialchars($site_email) ?></a>
                                 </div>
                             </div>
                         </div>
@@ -109,14 +113,11 @@ include __DIR__ . '/includes/header.php';
                             <i class="fas fa-clock fa-3x text-primary"></i>
                             <div class="ps-3">
                                 <h5 class="mb-3">Opening Hrs</h5>
-                                <div class="mb-3">
-                                    <h6 class="mb-0">Mon - Friday:</h6>
-                                    <span class="fs-5 text-primary">09.00 am to 07.00 pm</span>
-                                </div>
-                                <div class="mb-3">
-                                    <h6 class="mb-0">Saturday:</h6>
-                                    <span class="fs-5 text-primary">10.00 am to 05.00 pm</span>
-                                </div>
+                                <?php if (!empty(trim($site_business_hours))): ?>
+                                    <div class="fs-5 text-primary"><?= nl2br(htmlspecialchars($site_business_hours)) ?></div>
+                                <?php else: ?>
+                                    <span class="text-muted">—</span>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

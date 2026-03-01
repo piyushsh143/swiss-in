@@ -1,6 +1,6 @@
-# Travisa PHP Project
+# Swiis PHP Project
 
-PHP version of the Travisa site with database **swiis_db** (localhost), admin login, and management for testimonials and blogs.
+PHP version of the Swiis site with database **swiis_db** (localhost), admin login, and management for testimonials and blogs.
 
 ## Requirements
 
@@ -50,7 +50,7 @@ PHP version of the Travisa site with database **swiis_db** (localhost), admin lo
 ## Project structure
 
 ```
-Travisa/
+Swiis/
 ├── config/database.php      # DB connection (swiis_db, localhost)
 ├── includes/
 │   ├── auth.php             # Admin session helpers
@@ -81,7 +81,7 @@ Travisa/
 
 **PHP built-in server:**
 ```bash
-cd Travisa
+cd Swiis
 php -S localhost:8000
 ```
 Then open `http://localhost:8000` and `http://localhost:8000/admin/`.  

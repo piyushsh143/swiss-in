@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/auth.php';
 
 if (isAdminLoggedIn()) {
-    header('Location: dashboard.php');
+    header('Location: dashboard');
     exit;
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($admin && password_verify($password, $admin['password_hash'])) {
             $_SESSION['admin_id'] = (int) $admin['id'];
             $_SESSION['admin_username'] = $username;
-            header('Location: dashboard.php');
+            header('Location: dashboard');
             exit;
         }
         $error = 'Invalid username or password.';
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Admin Login - Travisa</title>
+    <title>Admin Login - Swiis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-card w-100 mx-3">
         <div class="login-header">
-            <h1>Travisa Admin</h1>
+            <h1>Swiis Admin</h1>
             <p class="mb-0 opacity-90">Sign in to manage content</p>
         </div>
         <div class="login-body">

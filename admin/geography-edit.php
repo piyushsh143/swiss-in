@@ -11,7 +11,7 @@ if ($id > 0) {
     $stmt->execute([$id]);
     $item = $stmt->fetch();
     if (!$item) {
-        header('Location: geographies.php');
+        header('Location: geographies');
         exit;
     }
 }
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$name, $state_code, $coverage_type, $sort_order, $is_active]);
             $_SESSION['flash'] = 'Geography added.';
         }
-        header('Location: geographies.php');
+        header('Location: geographies');
         exit;
     }
     $item = array_merge($item ?: [], [
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title><?= $id ? 'Edit' : 'Add' ?> Geography - Travisa Admin</title>
+    <title><?= $id ? 'Edit' : 'Add' ?> Geography - Swiis Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -68,15 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 sidebar">
-                <div class="py-3 px-3 text-white fw-bold">Travisa Admin</div>
-                <a href="dashboard.php"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-                <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
-                <a href="blogs.php"><i class="bi bi-journal-text me-2"></i>Blogs</a>
-                <a href="partners.php"><i class="bi bi-people me-2"></i>Partners</a>
-                <a href="geographies.php" class="active"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
-                <a href="contacts.php"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                <div class="py-3 px-3 text-white fw-bold">Swiis Admin</div>
+                <a href="dashboard"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                <a href="testimonials"><i class="bi bi-chat-quote me-2"></i>Testimonials</a>
+                <a href="blogs"><i class="bi bi-journal-text me-2"></i>Blogs</a>
+                <a href="partners"><i class="bi bi-people me-2"></i>Clients</a>
+                <a href="geographies" class="active"><i class="bi bi-geo-alt me-2"></i>Geographies</a>
+                <a href="contacts"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                <a href="site_settings"><i class="bi bi-gear me-2"></i>Site Settings</a>
                 <hr class="border-secondary">
-                <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                <a href="logout"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
             </nav>
             <main class="col-md-10 py-4">
                 <h1 class="mb-4"><?= $id ? 'Edit' : 'Add' ?> Geography</h1>
@@ -118,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Save Geography</button>
-                            <a href="geographies.php" class="btn btn-outline-secondary">Cancel</a>
+                            <a href="geographies" class="btn btn-outline-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>

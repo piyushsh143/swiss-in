@@ -22,7 +22,7 @@ include __DIR__ . '/includes/header.php';
             <div class="container py-5">
                 <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="display-5 mb-4">Latest from our Blog</h1>
-                    <p class="mb-0">News and updates from Travisa.</p>
+                    <p class="mb-0">News and updates from Swiis.</p>
                 </div>
                 <div class="row g-4">
                     <?php foreach ($blogs as $b): 

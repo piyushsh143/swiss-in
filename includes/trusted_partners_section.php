@@ -9,6 +9,16 @@ try {
 } catch (Throwable $e) {
     $partners = [];
 }
+
+$items = $partners;
+if (empty($items)) {
+    $items = [
+        ['title' => 'Banking Partners', 'description' => 'Supporting national and private sector banks in recovering retail loans, credit card dues, and high-value NPA portfolios.', 'image_path' => null],
+        ['title' => 'NBFC Partners', 'description' => 'Specialized recovery services for NBFC loan portfolios including personal loans, microfinance accounts, and unsecured lending.', 'image_path' => null],
+        ['title' => 'Fintech Companies', 'description' => 'Technology-enabled recovery solutions for digital lenders, BNPL providers, and emerging fintech platforms.', 'image_path' => null],
+        ['title' => 'Legal & Compliance Advisors', 'description' => 'Coordinated legal and pre-litigation support to ensure fully compliant recovery escalation procedures.', 'image_path' => null],
+    ];
+}
 ?>
 <!-- Trusted Partners Start -->
 <div class="container-fluid contact overflow-hidden py-5">
@@ -16,7 +26,7 @@ try {
         <div class="office">
             <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="sub-style">
-                    <h5 class="sub-title text-primary px-3">Trusted Partners</h5>
+                    <h5 class="sub-title text-primary px-3">Our Clients</h5>
                 </div>
                 <h1 class="display-5 mb-4">Financial Institutions We Support</h1>
                 <p class="mb-0">
@@ -25,50 +35,30 @@ try {
                     Our partnerships are built on transparency, trust, and measurable recovery outcomes.
                 </p>
             </div>
+        </div>
+    </div>
 
-            <div class="row g-4 justify-content-center partners-cards">
-                <?php if (!empty($partners)): ?>
-                <?php foreach ($partners as $i => $p): ?>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="<?= 0.1 + ($i * 0.2) ?>s">
-                    <div class="partner-card">
-                        <div class="partner-card__top">
-                            <?php if (!empty($p['image_path'])): ?>
-                            <img src="<?= htmlspecialchars($p['image_path']) ?>" class="partner-card__img" alt="">
-                            <?php endif; ?>
-                            <i class="bi bi-gem partner-card__top-icon" aria-hidden="true"></i>
-                        </div>
-                        <h4 class="partner-card__heading"><?= htmlspecialchars($p['title']) ?></h4>
-                        <?php if (!empty($p['description'])): ?>
-                        <p class="partner-card__desc"><?= nl2br(htmlspecialchars($p['description'])) ?></p>
-                        <?php endif; ?>
-                    </div>
+    <div class="partners-carousel-wrap">
+        <div class="partners-carousel-track" aria-hidden="true">
+            <?php for ($copy = 0; $copy < 2; $copy++): ?>
+            <?php foreach ($items as $p): ?>
+            <div class="partner-card partner-card--carousel">
+                <div class="partner-card__top">
+                    <?php if (!empty($p['image_path'])): ?>
+                    <img src="<?= htmlspecialchars($p['image_path']) ?>" class="partner-card__img"
+                        alt="<?= htmlspecialchars($p['title']) ?>">
+                    <?php else: ?>
+                    <span class="partner-card__top-watermark" aria-hidden="true"><?= htmlspecialchars($p['title']) ?></span>
+                    <?php endif; ?>
+                    <i class="bi bi-gem partner-card__top-icon" aria-hidden="true"></i>
                 </div>
-                <?php endforeach; ?>
-                <?php else: ?>
-                <!-- Fallback: static partners when none in DB -->
-                <?php
-                    $fallback = [
-                        ['title' => 'Banking Partners', 'desc' => 'Supporting national and private sector banks in recovering retail loans, credit card dues, and high-value NPA portfolios.'],
-                        ['title' => 'NBFC Partners', 'desc' => 'Specialized recovery services for NBFC loan portfolios including personal loans, microfinance accounts, and unsecured lending.'],
-                        ['title' => 'Fintech Companies', 'desc' => 'Technology-enabled recovery solutions for digital lenders, BNPL providers, and emerging fintech platforms.'],
-                        ['title' => 'Legal & Compliance Advisors', 'desc' => 'Coordinated legal and pre-litigation support to ensure fully compliant recovery escalation procedures.'],
-                    ];
-                    foreach ($fallback as $i => $p):
-                        ?>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="<?= 0.1 + ($i * 0.2) ?>s">
-                    <div class="partner-card">
-                        <div class="partner-card__top">
-                            <span class="partner-card__top-watermark"
-                                aria-hidden="true"><?= htmlspecialchars($p['title']) ?></span>
-                            <i class="bi bi-gem partner-card__top-icon" aria-hidden="true"></i>
-                        </div>
-                        <h4 class="partner-card__heading"><?= htmlspecialchars($p['title']) ?></h4>
-                        <p class="partner-card__desc"><?= htmlspecialchars($p['desc']) ?></p>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+                <h4 class="partner-card__heading"><?= htmlspecialchars($p['title']) ?></h4>
+                <?php if (!empty($p['description'])): ?>
+                <p class="partner-card__desc"><?= nl2br(htmlspecialchars($p['description'])) ?></p>
                 <?php endif; ?>
             </div>
+            <?php endforeach; ?>
+            <?php endfor; ?>
         </div>
     </div>
 </div>

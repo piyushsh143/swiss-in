@@ -85,11 +85,44 @@ try {
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         ) ENGINE=InnoDB
     ");
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS site_settings (
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            setting_key VARCHAR(64) NOT NULL UNIQUE,
+            setting_value TEXT,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB
+    ");
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS office_addresses (
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255) NOT NULL,
+            address TEXT NOT NULL,
+            sort_order INT NOT NULL DEFAULT 0,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB
+    ");
 
     $hash = password_hash('admin123', PASSWORD_DEFAULT);
     $stmt = $pdo->prepare('INSERT IGNORE INTO admins (username, password_hash) VALUES (?, ?)');
     $stmt->execute(['admin', $hash]);
 
+    $stmtSet = $pdo->prepare('INSERT IGNORE INTO site_settings (setting_key, setting_value) VALUES (?, ?)');
+    foreach ([
+        ['contact_email', 'info@swiis.in'],
+        ['contact_phone', '+91-7527008800'],
+        ['business_hours', "Monday - Friday: 09:00 AM to 07:00 PM\nSaturday: 10:00 AM to 05:00 PM\nSunday: Closed"],
+    ] as $row) {
+        $stmtSet->execute($row);
+    }
+    if ($pdo->query('SELECT COUNT(*) FROM office_addresses')->fetchColumn() == 0) {
+        $pdo->prepare('INSERT INTO office_addresses (title, address, sort_order) VALUES (?, ?, ?)')->execute([
+            'Head Office',
+            "Swiis Debt Management Pvt. Ltd., Bahowal, C/o Gurdev Singh, Village Mahilpur, Hoshiarpur, Punjab, India - 146105",
+            1
+        ]);
+    }
     if ($pdo->query('SELECT COUNT(*) FROM geographies')->fetchColumn() == 0) {
         $defaultGeographies = [
             ['Punjab', 'IN-PB', 'both', 1],

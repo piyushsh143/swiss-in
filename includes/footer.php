@@ -1,3 +1,8 @@
+<?php
+if (!isset($site_email)) {
+    require_once __DIR__ . '/site_settings.php';
+}
+?>
 <!-- Footer Start -->
 <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
     <div class="container py-5">
@@ -8,20 +13,23 @@
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-secondary mb-4">Contact Info</h4>
 
-                    <a href="#">
-                        <i class="fa fa-map-marker-alt me-2"></i>
-                        Swiis Debt Management Pvt. Ltd.<br>
-                        Bahowal, C/o Gurdev Singh,<br>
-                        Village Mahilpur, Hoshiarpur,<br>
-                        Punjab, India - 146105
+                    <?php if (!empty($office_addresses)): ?>
+                        <?php foreach ($office_addresses as $addr): ?>
+                        <div class="mb-2">
+                            <?php if (!empty($addr['title'])): ?><strong class="d-block text-secondary small"><?= htmlspecialchars($addr['title']) ?></strong><?php endif; ?>
+                            <span class="text-white"><?= nl2br(htmlspecialchars($addr['address'])) ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <span class="text-muted">—</span>
+                    <?php endif; ?>
+
+                    <a href="mailto:<?= htmlspecialchars($site_email) ?>">
+                        <i class="fas fa-envelope me-2"></i> <?= htmlspecialchars($site_email) ?>
                     </a>
 
-                    <a href="mailto:info@swiis.in">
-                        <i class="fas fa-envelope me-2"></i> info@swiis.in
-                    </a>
-
-                    <a href="tel:+917527008800">
-                        <i class="fas fa-phone me-2"></i> +91-7527008800
+                    <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $site_phone)) ?>">
+                        <i class="fas fa-phone me-2"></i> <?= htmlspecialchars($site_phone) ?>
                     </a>
 
                     <div class="d-flex align-items-center mt-3">
@@ -37,21 +45,11 @@
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-secondary mb-4">Business Hours</h4>
-
-                    <div class="mb-3">
-                        <h6 class="text-muted mb-0">Monday - Friday:</h6>
-                        <p class="text-white mb-0">09:00 AM to 07:00 PM</p>
-                    </div>
-
-                    <div class="mb-3">
-                        <h6 class="text-muted mb-0">Saturday:</h6>
-                        <p class="text-white mb-0">10:00 AM to 05:00 PM</p>
-                    </div>
-
-                    <div class="mb-3">
-                        <h6 class="text-muted mb-0">Sunday:</h6>
-                        <p class="text-white mb-0">Closed</p>
-                    </div>
+                    <?php if (!empty(trim($site_business_hours))): ?>
+                        <div class="text-white"><?= nl2br(htmlspecialchars($site_business_hours)) ?></div>
+                    <?php else: ?>
+                        <span class="text-muted">—</span>
+                    <?php endif; ?>
                 </div>
             </div>
 

@@ -1,1 +1,14 @@
 DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /travisa/admin/
+    # Remove .php from admin URLs: redirect /admin/dashboard.php to /admin/dashboard
+    RewriteCond %{THE_REQUEST} \s/travisa/admin/([a-zA-Z0-9_-]+)\.php(\?[^\s]*)?\s [NC]
+    RewriteRule ^ /travisa/admin/%1 [R=301,L,QSA]
+    # Serve .php when extension is omitted
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L,QSA]
+</IfModule>
