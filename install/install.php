@@ -5,9 +5,9 @@
  * DELETE or protect this folder after running once.
  */
 $host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'swiis_db';
+$user = 'swiisin_db_dev';
+$pass = 'MvuNICF+.2!#';
+$dbname = 'swiisin_db';
 
 try {
     $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
@@ -104,9 +104,9 @@ try {
         ) ENGINE=InnoDB
     ");
 
-    $hash = password_hash('admin123', PASSWORD_DEFAULT);
+    $hash = password_hash('MkQ3hX0GB6j2X6A', PASSWORD_DEFAULT);
     $stmt = $pdo->prepare('INSERT IGNORE INTO admins (username, password_hash) VALUES (?, ?)');
-    $stmt->execute(['admin', $hash]);
+    $stmt->execute(['swiisAdmin', $hash]);
 
     $stmtSet = $pdo->prepare('INSERT IGNORE INTO site_settings (setting_key, setting_value) VALUES (?, ?)');
     foreach ([

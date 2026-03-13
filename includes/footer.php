@@ -34,9 +34,7 @@ if (!isset($site_email)) {
 
                     <div class="d-flex align-items-center mt-3">
                         <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                        <a class="btn mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn mx-1" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a class="btn mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn mx-1" href="/linkedin" traget="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>

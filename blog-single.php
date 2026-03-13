@@ -22,7 +22,7 @@ include __DIR__ . '/includes/header.php';
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h3 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s"><?= htmlspecialchars($post['title']) ?></h3>
                 <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
                     <li class="breadcrumb-item"><a href="blog" class="text-white">Blog</a></li>
                     <li class="breadcrumb-item active text-secondary"><?= htmlspecialchars(mb_substr($post['title'], 0, 30)) ?><?= mb_strlen($post['title']) > 30 ? '...' : '' ?></li>
                 </ol>
@@ -35,7 +35,7 @@ include __DIR__ . '/includes/header.php';
                 <article class="mx-auto" style="max-width: 800px;">
                     <p class="text-muted mb-3"><?= date('F j, Y', strtotime($post['created_at'])) ?></p>
                     <?php if ($post['featured_image']): ?>
-                    <img src="<?= htmlspecialchars($post['featured_image']) ?>" class="img-fluid rounded mb-4 w-100" alt="<?= htmlspecialchars($post['title']) ?>">
+                    <img src="/<?= htmlspecialchars($post['featured_image']) ?>" class="img-fluid rounded mb-4 w-100" alt="<?= htmlspecialchars($post['title']) ?>">
                     <?php endif; ?>
                     <div class="content">
                         <?= nl2br(htmlspecialchars($post['content'])) ?>

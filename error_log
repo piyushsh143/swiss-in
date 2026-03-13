@@ -1,0 +1,24 @@
+[12-Mar-2026 13:17:30 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swiisin_db.testimonials' doesn't exist in /home/swiisin/public_html/includes/testimonials_section.php:6
+Stack trace:
+#0 /home/swiisin/public_html/includes/testimonials_section.php(6): PDO->query()
+#1 /home/swiisin/public_html/index.php(86): include('/home/swiisin/p...')
+#2 {main}
+  thrown in /home/swiisin/public_html/includes/testimonials_section.php on line 6
+[12-Mar-2026 13:20:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swiisin_db.testimonials' doesn't exist in /home/swiisin/public_html/includes/testimonials_section.php:6
+Stack trace:
+#0 /home/swiisin/public_html/includes/testimonials_section.php(6): PDO->query()
+#1 /home/swiisin/public_html/index.php(86): include('/home/swiisin/p...')
+#2 {main}
+  thrown in /home/swiisin/public_html/includes/testimonials_section.php on line 6
+[12-Mar-2026 13:20:34 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swiisin_db.testimonials' doesn't exist in /home/swiisin/public_html/includes/testimonials_section.php:6
+Stack trace:
+#0 /home/swiisin/public_html/includes/testimonials_section.php(6): PDO->query()
+#1 /home/swiisin/public_html/index.php(86): include('/home/swiisin/p...')
+#2 {main}
+  thrown in /home/swiisin/public_html/includes/testimonials_section.php on line 6
+[12-Mar-2026 13:20:34 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swiisin_db.testimonials' doesn't exist in /home/swiisin/public_html/includes/testimonials_section.php:6
+Stack trace:
+#0 /home/swiisin/public_html/includes/testimonials_section.php(6): PDO->query()
+#1 /home/swiisin/public_html/index.php(86): include('/home/swiisin/p...')
+#2 {main}
+  thrown in /home/swiisin/public_html/includes/testimonials_section.php on line 6

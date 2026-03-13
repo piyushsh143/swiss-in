@@ -22,5 +22,4 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://swiis.in/$1 [R=301,L]
 
-Redirect 301 /linkedin https://www.linkedin.com/in/swiis-consultants-1225b1344
 </IfModule>

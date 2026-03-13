@@ -14,8 +14,8 @@ require_once __DIR__ . '/site_settings.php';
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo.cdr.png" type="image/png">
-    <link rel="apple-touch-icon" href="img/logo.cdr.png">
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/logo.png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,14 +29,14 @@ require_once __DIR__ . '/site_settings.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,20 +71,17 @@ require_once __DIR__ . '/site_settings.php';
         <div class="row gx-0 align-items-center">
             <div class="col-lg-5 text-center text-lg-start mb-lg-0">
                 <div class="d-flex">
-                    <a href="mailto:<?= htmlspecialchars($site_email) ?>" class="text-muted me-4"><i class="fas fa-envelope me-2"></i><?= htmlspecialchars($site_email) ?></a>
-                    <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $site_phone)) ?>" class="text-muted me-0"><i class="fas fa-phone-alt me-2"></i><?= htmlspecialchars($site_phone) ?></a>
+                    <a href="mailto:<?= htmlspecialchars($site_email) ?>" class="text-muted me-4"><i
+                            class="fas fa-envelope me-2"></i><?= htmlspecialchars($site_email) ?></a>
+                    <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $site_phone)) ?>"
+                        class="text-muted me-0"><i
+                            class="fas fa-phone-alt me-2"></i><?= htmlspecialchars($site_phone) ?></a>
                 </div>
             </div>
             <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
-                        href="https://x.com/swiisconsultant"><i class="fa-brands fa-x-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
-                        href="https://www.facebook.com/profile.php?id=61556441472731"><i
-                            class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
-                        href="https://www.linkedin.com/in/swiis-consultants-limited-private-8b6451301"><i
-                            class="fab fa-instagram fw-normal"></i></a>
+                        href="/linkedin" traget="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
@@ -100,7 +97,7 @@ require_once __DIR__ . '/site_settings.php';
     <div class="container-fluid nav-bar p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <h1 class="display-5 text-secondary m-0"><img src="img/logo.png" class="img-fluid" alt="Swiis">
+                <h1 class="display-5 text-secondary m-0"><img src="/img/logo.png" class="img-fluid" alt="Swiis">
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -108,9 +105,8 @@ require_once __DIR__ . '/site_settings.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index" class="nav-item nav-link <?= $nav_active === 'home' ? 'active' : '' ?>">Home</a>
-                    <a href="about"
-                        class="nav-item nav-link <?= $nav_active === 'about' ? 'active' : '' ?>">About</a>
+                    <a href="/" class="nav-item nav-link <?= $nav_active === 'home' ? 'active' : '' ?>">Home</a>
+                    <a href="about" class="nav-item nav-link <?= $nav_active === 'about' ? 'active' : '' ?>">About</a>
                     <a href="service"
                         class="nav-item nav-link <?= $nav_active === 'service' ? 'active' : '' ?>">Service</a>
                     <a href="blog" class="nav-item nav-link <?= $nav_active === 'blog' ? 'active' : '' ?>">Blog</a>
