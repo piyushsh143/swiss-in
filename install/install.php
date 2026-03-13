@@ -5,9 +5,9 @@
  * DELETE or protect this folder after running once.
  */
 $host = 'localhost';
-$user = 'swiisin_db_dev';
-$pass = 'MvuNICF+.2!#';
-$dbname = 'swiisin_db';
+$user = 'root';
+$pass = '';
+$dbname = 'swiis_db';
 
 try {
     $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
