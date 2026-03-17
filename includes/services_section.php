@@ -25,7 +25,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4 service-desc-text">
-                                    <a href="#" class="h4 text-white mb-0">Credit Card Recovery</a>
+                                    <a href="#" class="text-white mb-0">Credit Card Recovery</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
@@ -61,7 +61,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="h4 text-white mb-0">Loan EMI Collection</a>
+                                    <a href="#" class="text-white mb-0">Loan EMI Collection</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
@@ -95,7 +95,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="h4 text-white mb-0">NBFC Recovery Services</a>
+                                    <a href="#" class="text-white mb-0">NBFC Recovery Services</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
@@ -129,7 +129,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="h4 text-white mb-0">NPA & Default Recovery</a>
+                                    <a href="#" class="text-white mb-0">NPA & Default Recovery</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
@@ -163,7 +163,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="h4 text-white mb-0">Settlement & Negotiation</a>
+                                    <a href="#" class="text-white mb-0">Settlement & Negotiation</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
@@ -197,7 +197,7 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="h4 text-white mb-0">Legal & Pre-Litigation Support</a>
+                                    <a href="#" class="text-white mb-0">Legal & Pre-Litigation Support</a>
                                 </div>
                                 <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
                                     Explore More
