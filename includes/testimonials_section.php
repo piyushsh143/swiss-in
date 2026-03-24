@@ -19,7 +19,7 @@ $testimonials = $pdo->query('SELECT * FROM testimonials WHERE is_published = 1 O
         </div>
         <div class="owl-carousel testimonial-carousel wow zoomInDown" data-wow-delay="0.2s">
             <?php foreach ($testimonials as $t):
-                $img = $t['image_path'] ?: 'img/testimonial-1.jpg';
+                $img = trim((string) ($t['image_path'] ?? ''));
                 $stars = (int) $t['rating'];
                 ?>
             <div class="testimonial-item">
@@ -32,9 +32,13 @@ $testimonials = $pdo->query('SELECT * FROM testimonials WHERE is_published = 1 O
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
-                        <img class="img-fluid rounded-circle" src="<?= htmlspecialchars($img) ?>"
+                    <div class="testimonial-avatar rounded-circle me-4">
+                        <?php if ($img !== ''): ?>
+                        <img class="img-fluid rounded-circle w-100 h-100" src="<?= htmlspecialchars($img) ?>"
                             alt="<?= htmlspecialchars($t['author_name']) ?>">
+                        <?php else: ?>
+                        <div class="testimonial-avatar-placeholder rounded-circle" aria-hidden="true"></div>
+                        <?php endif; ?>
                     </div>
                     <div class="my-auto">
                         <h5><?= htmlspecialchars($t['author_name']) ?></h5>
