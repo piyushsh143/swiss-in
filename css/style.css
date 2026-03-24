@@ -574,6 +574,23 @@
     z-index: -1;
 }
 
+.testimonial-avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+    object-fit: cover;
+}
+
+.testimonial-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #dee2e6;
+}
+
 .testimonial .owl-carousel.testimonial-carousel .owl-nav {
     position: absolute;
     top: -60px;
@@ -788,7 +805,7 @@
     gap: 1.25rem;
     width: max-content;
     padding: 0 1rem;
-    animation: partners-carousel-scroll 20s linear infinite;
+    animation: partners-carousel-scroll 60s linear infinite;
 }
 
 .partners-carousel-track:hover {
