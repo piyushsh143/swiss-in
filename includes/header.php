@@ -10,8 +10,8 @@ require_once __DIR__ . '/site_settings.php';
     <meta charset="utf-8">
     <title><?= htmlspecialchars($page_title) ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="<?= htmlspecialchars($page_keywords ?? '') ?>" name="keywords">
+    <meta content="<?= htmlspecialchars($page_description ?? '') ?>" name="description">
 
     <!-- Favicon -->
     <link rel="icon" href="/img/logo.png" type="image/png">
@@ -81,7 +81,7 @@ require_once __DIR__ . '/site_settings.php';
             <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
-                        href="/linkedin" traget="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        href="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">

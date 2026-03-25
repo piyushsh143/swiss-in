@@ -34,7 +34,7 @@ if (!isset($site_email)) {
 
                     <div class="d-flex align-items-center mt-3">
                         <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                        <a class="btn mx-1" href="/linkedin" traget="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn mx-1" href="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -56,12 +56,12 @@ if (!isset($site_email)) {
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-secondary mb-4">Our Services</h4>
 
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Credit Card Recovery</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Loan EMI Collection</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> NBFC Recovery Services</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> NPA & Default Recovery</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Settlement & Negotiation</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Legal & Pre-Litigation Support</a>
+                    <a href="credit-card-recovery"><i class="fas fa-angle-right me-2"></i> Credit Card Recovery</a>
+                    <a href="loan-emi-collection"><i class="fas fa-angle-right me-2"></i> Loan EMI Collection</a>
+                    <a href="nbfc-recovery-services"><i class="fas fa-angle-right me-2"></i> NBFC Recovery Services</a>
+                    <a href="npa-default-recovery"><i class="fas fa-angle-right me-2"></i> NPA & Default Recovery</a>
+                    <a href="settlement-negotiation"><i class="fas fa-angle-right me-2"></i> Settlement & Negotiation</a>
+                    <a href="legal-pre-litigation-support"><i class="fas fa-angle-right me-2"></i> Legal & Pre-Litigation Support</a>
                 </div>
             </div>
 
@@ -72,9 +72,10 @@ if (!isset($site_email)) {
 
                     <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
                     <a href="#"><i class="fas fa-angle-right me-2"></i> Recovery Process</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> RBI Compliance</a>
+                    <a href="https://sachet.rbi.org.in"><i class="fas fa-angle-right me-2"></i> RBI Compliance</a>
+                    <a href="http://sliceit.com"><i class="fas fa-angle-right me-2"></i> Slice Small Finance Bank</a>
                     <a href="#"><i class="fas fa-angle-right me-2"></i> Ethical Collection Policy</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="uploads/docs/Privacy%20Policy.pdf" target="_blank" rel="noopener" download><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
                     <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
                 </div>
             </div>

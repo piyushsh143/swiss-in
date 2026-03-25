@@ -25,14 +25,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4 service-desc-text">
-                                    <a href="#" class="text-white mb-0">Credit Card Recovery</a>
+                                    <a href="credit-card-recovery" class="text-white mb-0">Credit Card Recovery</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="credit-card-recovery">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="credit-card-recovery">
                                     <h4 class="text-white mb-4 py-3">Credit Card Recovery</h4>
                                 </a>
                                 <div class="px-4">
@@ -41,7 +41,7 @@
                                         through tele-calling, digital reminders, settlement negotiation,
                                         and compliance-based escalation.
                                     </p>
-                                    <a class="btn btn-primary border-secondary rounded-pill py-3 px-5" href="#">
+                                    <a class="btn btn-primary border-secondary rounded-pill py-3 px-5" href="credit-card-recovery">
                                         Explore More
                                     </a>
                                 </div>
@@ -61,14 +61,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="text-white mb-0">Loan EMI Collection</a>
+                                    <a href="loan-emi-collection" class="text-white mb-0">Loan EMI Collection</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="loan-emi-collection">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="loan-emi-collection">
                                     <h4 class="text-white mb-4 py-3">Loan EMI Collection</h4>
                                 </a>
                                 <div class="px-4">
@@ -77,7 +77,7 @@
                                         for personal loans, home loans, auto loans, and SME loan EMIs.
                                     </p>
                                     <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                                        href="#">Explore More</a>
+                                        href="loan-emi-collection">Explore More</a>
                                 </div>
                             </div>
                         </div>
@@ -95,14 +95,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="text-white mb-0">NBFC Recovery Services</a>
+                                    <a href="nbfc-recovery-services" class="text-white mb-0">NBFC Recovery Services</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="nbfc-recovery-services">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="nbfc-recovery-services">
                                     <h4 class="text-white mb-4 py-3">NBFC Recovery Services</h4>
                                 </a>
                                 <div class="px-4">
@@ -111,7 +111,7 @@
                                         including microfinance accounts, fintech loans, and unsecured portfolios.
                                     </p>
                                     <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                                        href="#">Explore More</a>
+                                        href="nbfc-recovery-services">Explore More</a>
                                 </div>
                             </div>
                         </div>
@@ -129,14 +129,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="text-white mb-0">NPA & Default Recovery</a>
+                                    <a href="npa-default-recovery" class="text-white mb-0">NPA & Default Recovery</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="npa-default-recovery">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="npa-default-recovery">
                                     <h4 class="text-white mb-4 py-3">NPA & Default Recovery</h4>
                                 </a>
                                 <div class="px-4">
@@ -145,7 +145,7 @@
                                         structured field visits, negotiation, and pre-litigation processes.
                                     </p>
                                     <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                                        href="#">Explore More</a>
+                                        href="npa-default-recovery">Explore More</a>
                                 </div>
                             </div>
                         </div>
@@ -163,14 +163,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="text-white mb-0">Settlement & Negotiation</a>
+                                    <a href="settlement-negotiation" class="text-white mb-0">Settlement & Negotiation</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="settlement-negotiation">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="settlement-negotiation">
                                     <h4 class="text-white mb-4 py-3">Settlement & Negotiation</h4>
                                 </a>
                                 <div class="px-4">
@@ -179,7 +179,7 @@
                                         to maximize recovery while maintaining borrower relationships.
                                     </p>
                                     <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                                        href="#">Explore More</a>
+                                        href="settlement-negotiation">Explore More</a>
                                 </div>
                             </div>
                         </div>
@@ -197,14 +197,14 @@
                         <div class="service-title">
                             <div class="service-title-name">
                                 <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
-                                    <a href="#" class="text-white mb-0">Legal & Pre-Litigation Support</a>
+                                    <a href="legal-pre-litigation-support" class="text-white mb-0">Legal & Pre-Litigation Support</a>
                                 </div>
-                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">
+                                <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="legal-pre-litigation-support">
                                     Explore More
                                 </a>
                             </div>
                             <div class="service-content pb-4">
-                                <a href="#">
+                                <a href="legal-pre-litigation-support">
                                     <h4 class="text-white mb-4 py-3">Legal & Pre-Litigation Support</h4>
                                 </a>
                                 <div class="px-4">
@@ -213,7 +213,7 @@
                                         coordination and compliance-based recovery procedures.
                                     </p>
                                     <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                                        href="#">Explore More</a>
+                                        href="legal-pre-litigation-support">Explore More</a>
                                 </div>
                             </div>
                         </div>

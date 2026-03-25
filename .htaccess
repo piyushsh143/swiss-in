@@ -12,15 +12,12 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^about/?$ about.php [L]
 RewriteRule ^contact/?$ contact.php [L]
 RewriteRule ^service/?$ service.php [L]
+RewriteRule ^(credit-card-recovery|loan-emi-collection|nbfc-recovery-services|npa-default-recovery|settlement-negotiation|legal-pre-litigation-support)/?$ service-detail.php?slug=$1 [L,QSA]
 RewriteRule ^blog/?$ blog.php [L]
 RewriteRule ^testimonial/?$ testimonial.php [L]
 
 # Blog posts
 RewriteRule ^blog/([^/]+)/?$ blog-single.php?slug=$1 [L,QSA]
-
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://swiis.in/$1 [R=301,L]
 
 Redirect 301 /linkedin https://www.linkedin.com/in/swiis-consultants-1225b1344
 </IfModule>
